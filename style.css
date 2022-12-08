@@ -1,0 +1,245 @@
+.table{
+    margin: 0 auto;
+    margin-top: 50px;
+    border-collapse: separate;
+    border-spacing: 80px 20px;
+}
+
+/*== ボタン共通設定 */
+.btn{
+    /*アニメーションの起点とするためrelativeを指定*/
+    position: relative;
+	overflow: hidden;
+    /*ボタンの形状*/
+	text-decoration: none;
+	display: inline-block;
+   	border: 1px solid #555;/* ボーダーの色と太さ */
+    padding: 10px 30px;
+    text-align: center;
+    outline: none;
+    /*アニメーションの指定*/   
+    transition: ease .2s;
+}
+
+/*ボタン内spanの形状*/
+.btn span {
+	position: relative;
+	z-index: 3;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+	color:#333;
+}
+
+.btn:hover span{
+	color:#fff;
+}
+
+/*== 背景が流れる（左から右） */
+.bgleft:before {
+ 	content: '';
+    /*絶対配置で位置を指定*/
+ 	position: absolute;
+ 	top: 0;
+ 	left: 0;
+ 	z-index: 2;
+    /*色や形状*/
+ 	background:#333;/*背景色*/
+ 	width: 100%;
+	height: 100%;
+    /*アニメーション*/
+ 	transition: transform .6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+ 	transform: scale(0, 1);
+	transform-origin: right top;
+}
+
+/*hoverした際の形状*/
+.bgleft:hover:before{
+	transform-origin:left top;
+	transform:scale(1, 1);
+}
+
+/*== 背景が流れる（左から右） */
+.bgleft2:before {
+    content: '';
+   /*絶対配置で位置を指定*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+   /*色や形状*/
+    background:#333;/*背景色*/
+    width: 100%;
+   height: 100%;
+   /*アニメーション*/
+    transition: transform .12s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+    transform: scale(0, 1);
+   transform-origin: right top;
+}
+
+/*hoverした際の形状*/
+.bgleft2:hover:before{
+   transform-origin:left top;
+   transform:scale(1, 1);
+}
+
+
+
+/*表示するテキストが切り替わる*/
+.btntextchange{
+    /*テキストの基点とするためrelativeを指定*/
+	position: relative;
+    /*ボタンの形状*/
+	border: 1px solid #555;
+	border-radius:25px;
+    min-width:210px;
+	padding: 20px;
+    text-align: center;
+	display: inline-block;
+    text-decoration: none;
+    color: #333;
+    outline: none;
+    /*アニメーションの指定*/
+    transition: all .2s;
+}
+
+/*hoverした際の変化*/
+.btntextchange:hover{
+  background:#333;
+  color:#fff;
+}
+
+.btntextchange span{
+    /*絶対配置でテキストの位置を決める*/
+	position: absolute;
+	left: 50%;
+	top:50%;
+    transform:translate(-50%,-50%);
+    /*アニメーションの指定*/
+    transition: all .5s;
+  /*ブロック要素にしてテキスト折り返しなし*/  
+	display: block;
+	white-space: nowrap;
+}
+
+/*差し替わるテキストの設定*/
+.btntextchange span:nth-child(2){
+	opacity:0;/*透過0に*/
+}
+
+/*hoverするとテキストが入れ替わる設定*/
+.btntextchange:hover span:nth-child(1){
+	opacity:0;/*透過0に*/
+}
+
+.btntextchange:hover span:nth-child(2){
+	opacity:1;/*不透明に*/
+}
+
+
+
+/*表示するテキストが切り替わる*/
+.btntextchange2{
+    /*テキストの基点とするためrelativeを指定*/
+	position: relative;
+    /*ボタンの形状*/
+	border: 1px solid #555;
+	border-radius:25px;
+    min-width:210px;
+	padding: 20px;
+    text-align: center;
+	display: inline-block;
+    text-decoration: none;
+    color: #333;
+    outline: none;
+    /*アニメーションの指定*/
+    transition: all .2s;
+}
+
+/*hoverした際の変化*/
+.btntextchange2:hover{
+  background:#333;
+  color:#fff;
+}
+
+.btntextchange2 span{
+    /*絶対配置でテキストの位置を決める*/
+	position: absolute;
+	left: 50%;
+	top:50%;
+    transform:translate(-50%,-50%);
+    /*アニメーションの指定*/
+    transition: all .5s;
+  /*ブロック要素にしてテキスト折り返しなし*/  
+	display: block;
+	white-space: nowrap;
+}
+
+/*差し替わるテキストの設定*/
+.btntextchange2 span:nth-child(2){
+	opacity:0;/*透過0に*/
+}
+
+/*hoverするとテキストが入れ替わる設定*/
+.btntextchange2:hover span:nth-child(1){
+	opacity:0;/*透過0に*/
+}
+
+.btntextchange2:hover span:nth-child(2){
+	opacity:1;/*不透明に*/
+}
+
+/*== 影が拡がって浮き上がる */
+
+/*ボタンの形状*/
+.float2{
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+    padding:10px 20px;
+    display: inline-block;
+    text-decoration: none;
+    outline: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), 0 0 40px rgba(128, 128, 128, 0.1) ;
+    /*アニメーションの設定*/
+    transition: all .3s;
+}
+
+/*hoverをしたらボックスの影が拡がり色が濃くなる*/
+.float2:hover {
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4), 0 0 50px rgba(128, 128, 128, 0.1) ;
+    border-color: transparent;
+}
+
+/*== 影が拡がって浮き上がる */
+
+/*ボタンの形状*/
+.float2_2{
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+    padding:10px 20px;
+    display: inline-block;
+    text-decoration: none;
+    outline: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), 0 0 40px rgba(128, 128, 128, 0.1) ;
+    /*アニメーションの設定*/
+    transition: all .3s;
+}
+
+/*hoverをしたらボックスの影が拡がり色が濃くなる*/
+.float2_2:hover {
+    box-shadow: 0 1px 10px rgba(250, 0, 0, 0.4), 0 0 50px rgba(128, 128, 128, 0.1) ;
+    border-color: transparent;
+}
+
+
+
+/*========= レイアウトのためのCSS ===============*/
+
+body{
+    vertical-align:middle; 
+    padding: 100px 0;
+    text-align: center;
+}
+
+p{
+    margin: 0 0 10px 0;
+}
